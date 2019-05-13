@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        var apiUrl = "http://pyaws.pya.com.co/ServiceSagWeb.svc/web/consultaSagJson";
+        var data = {
+            a_s_token: "t0k3n1",
+            a_s_consulta: "select * from articulos"
+        };
+
+        let fetchData = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+
+        fetch(apiUrl, fetchData)
+            .then(response =>
+                response.json()
+            )
+            .then(data => {
+                console.log(data)
+            })
+    </script>
+</head>
+
+<body>
+    <p>Hola mundo</p>
+</body>
+
+</html>
